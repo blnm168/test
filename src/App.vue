@@ -3,29 +3,46 @@
     <img alt="Vue logo"
          src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <button @click="set()">set</button>
+    <button @click="news()">news</button>
+    <button>logout</button>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import {getUserInfo} from './utils/util'
 export default {
   name: 'app',
   components: {
     HelloWorld
   },
   methods: {
+    set () {
+      this.axios.get('http://192.168.0.121:3000/set')
+        .then(function (response) {
+          console.log(response);
 
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    },
+    news () {
+      this.axios.get('http://192.168.0.121:3000/news')
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   },
-  created () {
-    this.axios.get('http://localhost:3000/s')
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  created(){
+      getUserInfo()
   }
+  
 }
 </script>
 

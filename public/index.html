@@ -1,17 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>vue</title>
-  </head>
-  <body>
-    <noscript>
+</head>
+
+<body style="height: 100vh;">
+    <!-- <noscript>
       <strong>We're sorry but vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app"></div> -->
     <!-- built files will be auto injected -->
-  </body>
+</body>
+<script>
+
+    // class Dialog {
+    //     constructor(text) {
+    //         this.lastX = 0
+    //         this.lastY = 0
+    //         this.x
+    //         this.y
+    //         this.text = text || ''
+    //         this.isMoving = false
+    //         this.dialog
+    //     }
+    //     open() {
+    //         const model = document.createElement('div')
+    //         model.id = 'model'
+    //         model.style = `
+    //     position:absolute;
+    //     top:0;
+    //     left:0;
+    //     bottom:0;
+    //     right:0;
+    //     background-color:rgba(0,0,0,.3);
+    //     display:flex;
+    //     justify-content: center;
+    //     align-items: center;`
+    //         model.addEventListener('click', this.close.bind(this))
+    //         document.body.appendChild(model)
+    //         this.dialog = document.createElement('div')
+    //         this.dialog.style = `
+    //     padding:20px;
+    //     background-color:white`
+    //         this.dialog.innerText = this.text
+    //         this.dialog.addEventListener('click', e => { e.stopPropagation() })
+    //         this.dialog.addEventListener('mousedown', this.handleMousedown.bind(this))
+    //         document.addEventListener('mousemove', this.handleMousemove.bind(this))
+    //         document.addEventListener('mouseup', this.handleMouseup.bind(this))
+    //         model.appendChild(this.dialog)
+    //     }
+    //     close() {
+    //         this.dialog.removeEventListener('mousedown', this.handleMousedown)
+    //         document.removeEventListener('mousemove', this.handleMousemove)
+    //         document.removeEventListener('mouseup', this.handleMouseup)
+    //         document.body.removeChild(document.querySelector('#model'))
+    //     }
+    //     handleMousedown(e) {
+    //         this.isMoving = true
+    //         this.x = e.clientX
+    //         this.y = e.clientY
+    //     }
+    //     handleMousemove(e) {
+    //         if (this.isMoving) {
+    //             this.dialog.style.transform = `translate(${e.clientX - this.x + this.lastX}px,${e.clientY - this.y + this.lastY}px)`
+    //         }
+    //     }
+    //     handleMouseup(e) {
+    //         this.lastX = e.clientX - this.x + this.lastX
+    //         this.lastY = e.clientY - this.y + this.lastY
+    //         this.isMoving = false
+    //     }
+    // }
+    // let dialog = new Dialog('Hello')
+    // dialog.open()
+    class Dialog {
+        constructor(text) {
+            this.text = text || ''
+            this.x
+            this.y
+            this.lastX = 0
+            this.lastY = 0
+            this.isMoving = false
+        }
+        open() {
+            let buttonStyle = 'width:50%'
+            const model = document.createElement('div')
+            model.id = 'model'
+            model.style = 'width:30%;min-width:400px;background-color:#eee;padding:20px;position:relative;margin:0 auto;top:20vh'
+            document.body.appendChild(model)
+            const modelText = document.createElement('p')
+            modelText.innerText = this.text
+            model.appendChild(modelText)
+            const modelThenButton = document.createElement('button')
+            modelThenButton.innerText = '确定'
+            modelThenButton.style = buttonStyle
+            model.appendChild(modelThenButton)
+            modelThenButton.addEventListener('click',this.then.bind(this))
+            const modelCatchButton = document.createElement('button')
+            modelCatchButton.innerText = '取消'
+            modelCatchButton.style = buttonStyle
+            model.appendChild(modelCatchButton)
+            const modelClose = document.createElement('div')
+            modelClose.innerText = 'X'
+            modelClose.style = 'position:absolute;top:10px;right:10px'
+            modelClose.addEventListener('click',this.close.bind(this))
+            model.appendChild(modelClose)
+        }
+        close(){
+            document.body.removeChild(document.querySelector('#model'))
+        }
+        then(){
+            return Promise.resolve('success')
+        }
+        catch(){
+            return Promise.reject('error')
+        }
+    }
+    let dialog = new Dialog('test')
+    dialog.open()
+
+
+</script>
+
 </html>
