@@ -1,0 +1,105 @@
+.mdl-grid.dt-table {
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.mdl-data-table.flat-table {
+    width: 100%;
+    th {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        text-align: center;
+        font-size: 15px;
+        color: #333;
+    }
+    th .dt-title {
+        font-weight: bold; // font-family: DFKai-SB, KaiTi, cursive;
+    }
+    th.index {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+    tr {
+        &.handle-tr:hover {
+            // background-color: rgba(0, 136, 66, 0.2);
+            cursor: pointer;
+        }
+    }
+    td {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 6px 8px;
+        text-align: center;
+        &.handle-td:hover {
+            background-color: rgba(0, 136, 66, 0.2);
+            cursor: pointer;
+        }
+        &.x-handle {
+            width: 100px;
+        }
+    }
+    p {
+        min-height: 16px;
+        line-height: 16px;
+        vertical-align: middle;
+        margin: 0; // max-width: 480px;
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+    .material-icons {
+        vertical-align: bottom;
+    }
+    th.table-checkbox {
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+    }
+}
+
+.main-table {
+    position: relative;
+}
+
+.mdl-grid {
+    position: relative;
+    z-index: 100;
+}
+
+.empty-block {
+    height: 80px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-block.hover {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    z-index: 10;
+}
+
+.empty-icon {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    img {
+        max-height: 100%;
+        width: auto;
+    }
+}
+
+.empty-text {
+    color: #909399;
+    font-size: 18px;
+}
+
+.fixed-table {
+    table-layout: fixed !important;
+}

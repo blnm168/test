@@ -1,0 +1,115 @@
+img {
+  border: 0;
+}
+
+.img.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #e0e0e0;
+}
+
+.wrapper {
+  padding: 12px;
+}
+
+.wrapper-content {
+  width: 75%;
+  margin: auto;
+  div:nth-last-child(n + 1) {
+    font-size: 17px;
+  }
+}
+
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.divider-10 {
+  height: 10px;
+  width: 100%;
+}
+
+.divider-20 {
+  height: 10px;
+  width: 100%;
+}
+
+h4.header {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2.508rem;
+  margin: 1.14rem 0 0.912rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.width-100 {
+  width: 100px;
+  .cell-nowrap();
+}
+
+.width-200 {
+  width: 200px;
+  .cell-nowrap();
+}
+
+.width-300 {
+  width: 300px;
+  .cell-nowrap();
+}
+
+.width-400 {
+  width: 400px;
+  .cell-nowrap();
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.clearfix,
+.row {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.justify-center{
+  justify-content: center;
+}

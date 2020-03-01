@@ -1,0 +1,96 @@
+.el-tabs__content .form-inline {
+  padding-left: 5px;
+}
+
+.grid-row {
+  padding: 0 10px;
+  &:last-child {
+    margin-bottom: -10px;
+  }
+}
+
+.form-inline {
+  .el-input {
+    width: 220px;
+  }
+  .field-dates {
+    .el-date-editor.el-input,
+    .el-date-editor.el-input__inner {
+      width: 102px;
+    }
+    .el-input--prefix .el-input__inner {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .el-input__icon.el-icon-date {
+      display: none;
+    }
+    .el-input__suffix-inner .el-input__icon {
+      margin-right: -6px;
+    }
+  }
+  .field {
+    display: inline-block;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    font-size: 0;
+    &.double {
+      width: 570px;
+    }
+  }
+  .input-label,
+  .el-form-item__label {
+    display: inline-block;
+    min-width: 95px;
+    padding-right: 5px;
+    text-align-last: justify;
+    font-size: 13px;
+  }
+  span.space {
+    font-size: 13px;
+    margin: 0 1px; // width: 32px;
+    width: 14px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #303133;
+  }
+}
+
+.el-form.form-inline {
+  .field {
+    padding-bottom: 0;
+  }
+}
+
+.el-form-item.full-field {
+  width: 100%;
+  .el-form-item__content {
+    width: 100%;
+  }
+}
+
+.self-field__container {
+  vertical-align: bottom;
+}
+
+.self-field__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0 4px;
+  height: 32px;
+  line-height: 30px;
+  display: inline-block;
+  width: 100%;
+  background: 0 0;
+  text-align: left;
+  color: inherit;
+  .cell-auto();
+}
+
+.row.search-bar {
+  text-align: center;
+}

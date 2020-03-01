@@ -1,0 +1,117 @@
+.mdl-grid.dt-detail-table {
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.el-tabs__content {
+  user-select: text;
+}
+
+.mdl-data-detail-table {
+  position: relative;
+  border-collapse: collapse;
+  white-space: nowrap;
+  background-color: rgb(255,255,255);
+}
+
+.main-detail-table + .main-detail-table .mdl-data-detail-table.flat-detail-table th{
+  border-top: 0;
+}
+
+.mdl-data-detail-table.flat-detail-table {
+  width: 100%;
+  tr, th, td {
+      padding: 0 18px;
+  }
+  th { 
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    position: relative;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    letter-spacing: 0;
+    height: 42px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+  }
+  th.index {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    width: 25%;
+  }
+  td {
+    width: 25%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 6px 8px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    height: 42px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;    
+    &.handle-td:hover {
+      background-color: rgba(0, 136, 66, 0.2);
+      cursor: pointer;
+    }
+    &.x-handle {
+      width: 100px;
+    }
+  }
+  strong {
+    min-height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin: 0;
+    max-width: 480px;
+    word-wrap: break-word;
+    font-size: 15px;
+  }
+  .material-icons {
+    vertical-align: bottom;
+  }
+}
+
+.primary-box-card.table-cols table tr th {
+  width: 15%;
+}
+
+.el-tabs--border-card.tab-table {
+  margin-top: 20px;
+  .el-tabs__nav {
+    .el-tabs__item {
+      height: 45px;
+      line-height: 45px;
+      font-size: 16px;
+    }
+  }
+  >.el-tabs__header {
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+  }
+}
+
+.main-detail-table {
+  position: relative;
+}
+
+.main-detail-table,.dt-detail-table {
+  .empty-detail-block {
+    height: 48px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .empty-text {
+    font-size: 14px;
+  }
+}
+

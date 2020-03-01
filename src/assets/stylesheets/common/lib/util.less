@@ -1,0 +1,53 @@
+.clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.no-bullet() {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.no-bullets() {
+    list-style: none;
+    padding-left: 0;
+    li {
+        .no-bullet();
+    }
+}
+
+.make-row() {
+    .clearfix();
+}
+
+.make-column() {
+    display: block;
+    float: left;
+}
+
+.img-responsive() {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.cell-nowrap() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+}
+
+.cell-auto() {
+    overflow-y: auto;
+    white-space: nowrap;
+    word-break: keep-all;
+}

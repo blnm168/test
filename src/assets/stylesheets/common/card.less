@@ -1,0 +1,84 @@
+.primary-box-card {
+    .el-card__header {
+        background-color: rgba(243, 243, 243, 1);
+        padding: 6px 20px;
+        font-size: 16px;
+        color: #666;
+    }
+    .primary-box-header {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        .title {
+            flex: 1;
+            min-height: 32px;
+            line-height: 32px;
+            vertical-align: middle;            
+        }
+        .el-input {
+            width: 135px;
+        }
+    }
+    .box-card-title {
+        div[role='button'] {
+            font-size: 16px;
+            color: #666;
+        }
+    }
+    .card-tools {
+        display: flex;
+        align-items: center;
+    }
+    // .card-tools .el-button,.card-tools .el-input {
+    //     // margin-right: 5px;
+    // }
+    .card-tools .material-icons {
+        color: rgba(0, 0, 0, .54);
+        cursor: pointer;
+    }
+    .el-card__body  {
+        transition: height 0.1s cubic-bezier(.25,.8,.5,1);       
+        height: auto; 
+        .more-option {
+            width: 100px;
+            height: 24px;
+            margin: 10px auto;
+            background-color: #f3f3f3;
+            position: relative;
+            display: flex;
+            line-height: 24px;
+            justify-content: center;
+            margin-bottom: -20px;
+            cursor: pointer;
+        }
+    }        
+
+}
+
+.primary-box-card.contraction {
+    .el-card__body {
+        padding: 0 !important;   
+        height: 0;
+        opacity: 0.2;
+        overflow: hidden;       
+    }    
+}
+
+.primary-box-card+.primary-box-card {
+    margin-top: 10px;
+}
+
+.primary-box-card.table-card {
+    .el-card__body {
+        padding: 0;
+    }
+}
+
+.primary-box-card .el-pagination {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.el-breadcrumb.title {
+    font-size: 16px;
+}

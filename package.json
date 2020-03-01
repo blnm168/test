@@ -1,50 +1,55 @@
 {
-  "name": "vue",
-  "version": "0.1.0",
+  "name": "YGOP-ICS",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue src --fix",
+    "start": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=4096 webpack-serve --config build/startup.js",
+    "build": "cross-env NODE_ENV=production webpack --config build/startup.js --progress",
+    "preview": "cross-env NODE_ENV=preview webpack --config build/startup.js --progress",
+    "hooks": "yarn add yorkie -D -W",
+    "open": "node build/bin/register-open.js"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^2.6.5",
-    "js-cookie": "^2.2.1",
-    "vue": "^2.6.10"
+    "client-framework": "1.0.0",
+    "client-libs": "^1.0.0",
+    "element-ui-extensions": "2.4.1",
+    "xlsx": "0.13.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-plugin-typescript": "^4.0.5",
-    "@vue/cli-service": "^3.12.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "typescript": "^3.7.2",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+    "@vue/cli-plugin-babel": "^3.0.0-rc.5",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
+    "@vue/eslint-config-standard": "^3.0.0-rc.5",
+    "babel-libs": "1.0.0",
+    "cross-env": "^5.2.0",
+    "lint-staged": "^7.2.0",
+    "webpack": "^4.16.0",
+    "webpack-command": "^0.4.0",
+    "webpack-libs": "4.16.0",
+    "webpack-serve-libs": "2.0.2",
+    "yorkie": "^1.0.3"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not ie <= 9"
+  ],
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.vue": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": "http://git.yiguo.com/SCD/YGOP.ICS.git",
+  "author": "zouyixing <zouyixing@exfresh.com.cn>",
+  "main": "index.js",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "workspaces": [
+    "packages/*"
   ]
 }

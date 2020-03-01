@@ -1,0 +1,11 @@
+{
+  "name": "client-polyfill",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "classlist-polyfill": "^1.2.0",
+    "resize-observer-polyfill": "^1.5.0"
+  }
+}
